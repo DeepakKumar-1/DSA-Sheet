@@ -3,29 +3,24 @@ package Graphs;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class CycleDetectionInDirectedGraphDFS {
-
-    private static boolean cycleCheck(int currentVertex, int[][] adjMatrix, boolean[] visited, boolean[] dfsVisited) {
+public class CycleDetectionInUndirectedGraphDFS {
+    public static boolean detectCycle(int currentVertex, int [][]adjMatrix, int parent, boolean []visited){
         visited[currentVertex] = true;
-        dfsVisited[currentVertex] = true;
-        for (int i=0; i<adjMatrix.length; i++){
+        for(int i=0; i<adjMatrix.length; i++){
             if(adjMatrix[currentVertex][i] == 1 && !visited[i]){
-                if (cycleCheck(i, adjMatrix, visited, dfsVisited)){
-                    return true;
-                }
-            }else if(dfsVisited[i]){
+                if(detectCycle(i, adjMatrix, currentVertex, visited)) return true;
+            } else if(i != parent){
                 return true;
             }
         }
-        dfsVisited[currentVertex] = false;
         return false;
     }
-    public static boolean cycleDetection(int [][]adjMatrix){
+
+    public static boolean hasCycle(int [][]adjMatrix){
         boolean []visited = new boolean[adjMatrix.length];
-        boolean []dfsVisited = new boolean[adjMatrix.length];
         for(int i=0; i<adjMatrix.length; i++){
             if(!visited[i]){
-                if(cycleCheck(i, adjMatrix, visited, dfsVisited)){
+                if(detectCycle(i, adjMatrix, -1, visited)){
                     return true;
                 }
             }
@@ -44,6 +39,7 @@ public class CycleDetectionInDirectedGraphDFS {
             int v1 = sc.nextInt();
             int v2 = sc.nextInt();
             adjMatrix[v1][v2] = 1;
+            adjMatrix[v2][v1] = 1;
         }
 
         // Display the graph
@@ -52,7 +48,7 @@ public class CycleDetectionInDirectedGraphDFS {
             System.out.println(Arrays.toString(arr));
         }
 
-        boolean ans = cycleDetection(adjMatrix);
+        boolean ans = hasCycle(adjMatrix);
         System.out.println("Has Cycle: " + ans);
     }
 }
