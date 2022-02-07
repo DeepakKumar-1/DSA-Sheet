@@ -78,3 +78,33 @@ public class KruskalsAlgorithm {
         }
     }
 }
+
+
+// OUTPUT :
+/*
+                Enter Number of Vertices: 8
+                Enter Number of Edges: 13
+                0 1 4
+                0 2 9
+                0 3 1
+                3 2 3
+                1 2 2
+                1 5 6
+                1 6 11
+                2 6 3
+                5 6 12
+                5 7 13
+                7 4 7
+                5 4 5
+                6 4 10
+
+            // Resultant MST
+
+                0 3 1
+                1 2 2
+                2 3 3
+                2 6 3
+                4 5 5
+                1 5 6
+                4 7 7
+*/
