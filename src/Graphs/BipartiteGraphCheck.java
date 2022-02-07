@@ -76,6 +76,7 @@ public class BipartiteGraphCheck {
             Enter Source Vertex: 3
             Is Bipartite Graph: true
 
+
             Enter Number of Vertices: 5
             Enter Number of Edges: 5
             0 2
@@ -90,4 +91,39 @@ public class BipartiteGraphCheck {
             [0, 1, 1, 1, 0]
             Enter Source Vertex: 3
             Is Bipartite Graph: false
+
+
+            Enter Number of Vertices: 5
+            Enter Number of Edges: 5
+            1 2
+            1 3
+            2 0
+            0 4
+            3 4
+            [0, 0, 1, 0, 1]
+            [0, 0, 1, 1, 0]
+            [1, 1, 0, 0, 0]
+            [0, 1, 0, 0, 1]
+            [1, 0, 0, 1, 0]
+            Enter Source Vertex: 3
+            Is Bipartite Graph: false
+
+
+            Enter Number of Vertices: 6
+            Enter Number of Edges: 6
+            0 1
+            1 2
+            2 3
+            3 4
+            4 5
+            5 0
+            [0, 1, 0, 0, 0, 1]
+            [1, 0, 1, 0, 0, 0]
+            [0, 1, 0, 1, 0, 0]
+            [0, 0, 1, 0, 1, 0]
+            [0, 0, 0, 1, 0, 1]
+            [1, 0, 0, 0, 1, 0]
+            Enter Source Vertex: 0
+            Is Bipartite Graph: true
+
  */
