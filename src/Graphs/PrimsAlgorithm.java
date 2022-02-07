@@ -69,6 +69,7 @@ public class PrimsAlgorithm {
 }
 
 /*
+// Output:
             Enter Number of Vertices: 5
             Enter Number of Edges: 8
             0 1 4
