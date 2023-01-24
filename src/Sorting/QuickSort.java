@@ -24,6 +24,7 @@ public class QuickSort {
             }
         }while(i<=j);
 
+
         // Now swap pivot and arr[j]
         int temp = pivot;
         arr[start] = arr[j];
