@@ -16,6 +16,7 @@ public class QuickSort {
             while (j >= start && pivot < arr[j]) {
                 j--;
             }
+
             if (i < j) {
                 // swap element i and j
                 int temp = arr[i];
