@@ -1,0 +1,39 @@
+ static void quickSort(int arr[], int s, int e)
+    {
+        // code here
+        if(s < e){
+            int pIndex = partition(arr, s, e);
+            quickSort(arr, s, pIndex-1);
+            quickSort(arr, pIndex+1, e);
+        }
+    }
+    static int partition(int arr[], int s, int e)
+    {
+        // your code here
+       
+         int i = s;
+         int j = e;
+         int pivot = arr[s];
+         while(i < j){
+             // from i find greater elements than pivot
+             while(i<= e && arr[i] <= pivot){
+                 i++;
+             }
+             // from j find smaller 
+             while(j>= s && arr[j] > pivot){
+                 j--;
+             }
+             // now swap i and j
+             if(i < j){
+                 int temp = arr[i];
+                 arr[i] = arr[j];
+                 arr[j] = temp;
+             }
+             
+         }
+         // swap j and pivot
+         int temp = pivot;
+         arr[s] = arr[j];
+         arr[j] = temp;
+         return j;
+    } 
